@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+
+    <script
+      type="module"
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script type="module" defer src="./js/const.js"></script>
+    <script type="module" defer src="./js/main.js"></script>
+    <script type="module" defer src="./js/students.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container header_container">
+          <div class="header-logo">Teacher || Students</div>
+          <div class="header_wrapper">
+            <div class="input-group mb-3">
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+              >
+                A - Z
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">A - Z</a></li>
+                <li><a class="dropdown-item" href="#">Z - A</a></li>
+              </ul>
+            </div>
+            <div class="input-group mb-3">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                class="btn btn-outline-secondary add-students-btn"
+                type="button"
+                id="button-addon2"
+              >
+                Add student
+              </button>
+
+              <!-- modal -->
+              <div
+                class="modal fade total_modal"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <form class="row g-3 teacher-form col-12" novalidate>
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                          Teachers' data
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="col-12">
+                          <label for="validationCustom01" class="form-label"
+                            >First name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="validationCustom01"
+                            placeholder="Last Name"
+                            name="firstName"
+                            required
+                          />
+                          <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-12">
+                          <label for="validationCustom02" class="form-label"
+                            >Last name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="validationCustom02"
+                            placeholder="Last Name"
+                            name="lastName"
+                            required
+                          />
+                          <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-12">
+                          <label
+                            for="validationCustomUsername"
+                            class="form-label"
+                            >Phone number</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="validationCustomUsername"
+                            placeholder="Phone number"
+                            name="phoneNumber"
+                            required
+                          />
+                          <div class="invalid-feedback">
+                            Please choose a username.
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label for="validationCustom02" class="form-label"
+                            >Groups</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="validationCustom02"
+                            placeholder="Groups"
+                            name="groups"
+                            required
+                          />
+                          <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="form-group">
+                          <label id="email-label" for="email">Email</label>
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="Enter your email"
+                            name="email"
+                            required=""
+                          />
+                        </div>
+                        <div class="col-12">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="invalidCheck"
+                              required
+                            />
+                            <label class="form-check-label" for="invalidCheck">
+                              Is Married?
+                            </label>
+                            <div class="invalid-feedback">
+                              You must agree before submitting.
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="mb-3 col-4 d-flex gap-2 align-items-baseline"
+                        >
+                          <input type="checkbox" id="isWork" />
+                          <label for="isWork" class="form-label">isWork</label>
+                          <div class="valid-feedback">Looks good!</div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button
+                          type="submit"
+                          class="btn btn-primary add-save-student"
+                        >
+                          Add Teachers
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="light-dark-mode">
+              <div class="switch-icon">
+                <img id="dark-img" src="./images/dark-mode.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="students">
+        <div class="container students-container">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control search__inp"
+              placeholder="Searching..."
+            />
+          </div>
+          <div class="alert">
+            <p>All teachers: <span class="students-count"></span></p>
+          </div>
+          <div class="students-row row"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
