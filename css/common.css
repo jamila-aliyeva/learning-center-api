@@ -59,11 +59,10 @@ li {
 }
 header {
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 10px;
   position: fixed;
   left: 0;
   right: 0;
-  padding: 0px 0;
   transition: 0.3s ease-out;
   background: #e3e7e8;
   z-index: 25;
@@ -73,7 +72,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 40px;
+  padding: 10px;
   align-items: center;
 }
 .header-logo {
@@ -135,66 +134,4 @@ body.dark .form-control {
 }
 body.dark .form-control ::placeholder {
   background-color: #202c36 !important;
-}
-.modal-backdrop {
-  display: none;
-}
-.needs-validation {
-  flex-direction: column;
-}
-.teachers-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-.card {
-  background-color: #dce0e1;
-  box-shadow: 0 50px 50px #757676;
-}
-body.dark .card {
-  background-color: #2b3844;
-  box-shadow: 0 4px 10px #757676;
-}
-body.dark .card-title {
-  color: #fff;
-}
-body.dark .card-body a {
-  color: #fff;
-}
-body.dark .card-body p {
-  color: #fff;
-}
-.card-body .card-title {
-  color: black;
-  font-weight: 500;
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-.card-body .email {
-  color: #0e0e0e;
-  font-size: 19px;
-}
-.card-body p {
-  margin-top: 10px;
-  color: #0e0e0e;
-  font-size: 16px;
-}
-.alert {
-  background-color: #c2c6c8;
-  color: #757676;
-}
-.alert p,
-.alert .students-count {
-  font-size: 22px;
-  font-weight: 500;
-}
-.no-product {
-  padding: 20px;
-  text-align: center;
-  color: #0e0e0e;
-  font-size: 28px;
-  font-weight: 500;
-}
-.students-container {
-  padding-top: 170px;
 }

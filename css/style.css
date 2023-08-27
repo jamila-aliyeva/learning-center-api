@@ -1,0 +1,62 @@
+.modal-backdrop {
+  display: none;
+}
+.needs-validation {
+  flex-direction: column;
+}
+.teachers-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: #dce0e1;
+  box-shadow: 0 50px 50px #757676;
+}
+body.dark .card {
+  background-color: #2b3844;
+  box-shadow: 0 4px 10px #757676;
+}
+body.dark .card-title {
+  color: #fff;
+}
+body.dark .card-body a {
+  color: #fff;
+}
+body.dark .card-body p {
+  color: #fff;
+}
+.card-body .card-title {
+  color: black;
+  font-weight: 500;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.card-body .email {
+  color: #0e0e0e;
+  font-size: 19px;
+}
+.card-body p {
+  margin-top: 10px;
+  color: #0e0e0e;
+  font-size: 16px;
+}
+.alert {
+  background-color: #c2c6c8;
+  color: #757676;
+}
+.alert p,
+.alert .students-count {
+  font-size: 22px;
+  font-weight: 500;
+}
+.no-product {
+  padding: 20px;
+  text-align: center;
+  color: #0e0e0e;
+  font-size: 28px;
+  font-weight: 500;
+}
+.students-container {
+  padding-top: 170px;
+}

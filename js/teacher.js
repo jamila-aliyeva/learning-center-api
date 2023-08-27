@@ -193,9 +193,9 @@ addTeacherBtn.addEventListener("click", () => {
 // edit
 
 window.addEventListener("click", async (e) => {
+  let id = e.target.getAttribute("id");
   let checkEdit = e.target.classList.contains("edit-btn");
   if (checkEdit) {
-    let id = e.target.getAttribute("id");
     selected = id;
     let { data } = await request.get(`teacher/${id}`);
     modulForm.firstName.value = data.firstName;
@@ -214,6 +214,7 @@ window.addEventListener("click", async (e) => {
     if (checkDelete) {
       let deleteConfirm = confirm("Do you want to delete this teacher data?");
       if (deleteConfirm) {
+        let id = e.target.getAttribute("id");
         await request.delete(`teacher/${id}`);
         getTeachers();
       }
